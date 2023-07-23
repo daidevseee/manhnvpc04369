@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <title>Nguyễn Văn Mạnh</title>
+        </head>
+    
+        <title>Product Page</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/style.css">
+        </head>
+        <style>
+        
+        </style>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">My Admin Dashboard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/admin" id="home">Trang chủ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admin/product-list" id="img_list">Sản phẩm</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/admin/add_product">Thêm sản phẩm</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- Product List -->
+  <div class="container-fluid">
+    <div class="row d-flex align-items-stretch" id="place">
+      <div class="col-4 h4">Sản phẩm</div>
+      <div class="col-2 h4">Giá</div>
+      <div class="col-2 h4">Số lượng</div> 
+      <div class="col-2 h4">Thành tiền</div>
+      <div class="col-2 h4">Hành động</div>
+      <% products.forEach(element => { %>
+        <div class="col-4 my-4">
+          <img class="card-img-top img-fluid" src="/images/<%= element.images %>" alt="<%= element.nameProduct %>" style="width: 60px!important;height: 66px!important;" >
+
+          <%= element.nameProduct %>
+        </div>
+        <div class="col-2">Giá</div>
+        <div class="col-2">Số lượng</div> 
+        <div class="col-2">Thành tiền</div>
+        <div class="col-2"><button class="btn"><a href="/admin/productDelete/<%= element.idProduct %>">Xóa</a></button> <button class="btn"><a href="/admin/productUpdate/<%= element.idProduct %>">Sửa</a></button></div>
+       
+    
+      <% }) %>
+    </div>
+</div>
+
+  <!-- Footer -->
+  <footer class="bg-light py-3 fixed-bottom" >
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p>&copy; 2023 MyStore, Inc. All rights reserved.</p>
+        </div>
+        <div class="col-md-6">
+          <ul class="list-inline text-md-right">
+            <li class="list-inline-item"><a href="#">Terms of Use</a></li>
+            <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+            <li class="list-inline-item"><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+        
+        
+</body>
+</html>
